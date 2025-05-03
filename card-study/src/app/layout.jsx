@@ -1,5 +1,7 @@
 import "./globals.css";
 import { inter } from './fonts'
+import { AppSidebar }  from "@/components/AppSidebar"; 
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 export const metadata = {
   title: "Tarjetas de estudio",
@@ -12,6 +14,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} antialiased`}
       >
+        <div className="flex items-center justify-center h-full w-auto">
+        <SidebarProvider>
+          <AppSidebar />
+        </SidebarProvider>
+        </div>
+        
+        
         {children}
       </body>
     </html>
